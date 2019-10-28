@@ -1,0 +1,12 @@
+  [
+  {
+    "marque": "Wolkswagen",
+    "prix": "15000"},
+  {
+    "marque": "Tesla",
+    "prix": "50000"
+  }, {
+    "marque": "Renault",
+    "prix": "10000"
+  }
+  ]
