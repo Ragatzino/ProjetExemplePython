@@ -1,6 +1,6 @@
 from IHM.listing_voitures import Listing
-from vue.compte_creation import CreationCompte
-from vue.abstract_vue import AbstractVue
+from IHM.creation_voiture import CreationVoiture
+from IHM.abstract_vue import AbstractVue
 from PyInquirer import Separator, prompt
 
 
@@ -14,7 +14,7 @@ questions = [
             Separator(),
             'Ajouter une voiture',
             Separator(),
-            'Quitter',
+            'Quitter'
         ]
     }
 ]
@@ -31,6 +31,6 @@ class Accueil(AbstractVue):
         if reponse['choix'] == 'Consulter la liste des voitures':
             return Listing()
         elif reponse['choix'] == 'Ajouter une voiture':
-            return Ajout()
+            return CreationVoiture()
         else:
-            return CreationCompte()
+            print("programme terminé")

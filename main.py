@@ -1,12 +1,15 @@
+
 from IHM.accueil import Accueil
+
 
 if __name__ == '__main__':
 
     # on démarre sur l'écran accueil
     current_vue = Accueil()
 
+    # tant qu'on a un écran à afficher, on continue
     while current_vue:
-        # on affiche une bordure pour séparer les vues
+        # on affiche une bordure pour séparer les vue
         with open('assets/border.txt', 'r', encoding="utf-8") as asset:
             print(asset.read())
         # les infos à afficher
@@ -16,4 +19,3 @@ if __name__ == '__main__':
 
     with open('assets/cat.txt', 'r', encoding="utf-8") as asset:
         print(asset.read())
-

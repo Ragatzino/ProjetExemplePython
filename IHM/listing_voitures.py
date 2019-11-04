@@ -1,13 +1,12 @@
 from IHM.abstract_vue import AbstractVue
-from IHM.accueil import Accueil
-from BusinessObject.utils.ordonnanceur.consultation_voiture_thread import ConsultationVoitureThread
+"""  from BusinessObject.utils.ordonnanceur.consultation_voiture_thread import ConsultationVoitureThread"""
 
 
 class Listing(AbstractVue):
-    def __init__(self):
-        global voitures
+    """  def __init__(self):
+      global voitures
         self.ordonnanceur = ConsultationVoitureThread()
-        self.ordonnanceur.start()
+        self.ordonnanceur.start()"""
 
     questions = [
         {
@@ -21,10 +20,11 @@ class Listing(AbstractVue):
     ]
 
     def display_info(self):
-        map(lambda x:print(x), voitures)
+        """ map(lambda x:print(x), voitures)"""
         with open('assets/error.txt', 'r', encoding="utf-8") as asset:
             print(asset.read())
 
     def make_choice(self):
+        from IHM.accueil import Accueil
         self.ordonnanceur.stop()
         return Accueil()
