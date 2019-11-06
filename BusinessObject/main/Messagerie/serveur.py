@@ -1,7 +1,7 @@
 import socket
 import select
 
-# https://www.gatevidyalay.com/transmission-control-protocol-tcp-header/
+# permet d'accepter des messages de 1000000 de longueur
 HEADER_LENGTH= 10
 # IP standard pour localhost
 ADRESSE_IP_SERVEUR="127.0.0.1"
