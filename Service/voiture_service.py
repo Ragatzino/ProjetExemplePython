@@ -1,6 +1,5 @@
-import json
 from DAO.main.VoitureDao import VoitureDAO
-from BusinessObject.main.Voiture import Voiture
+from BusinessObject.main.Voiture.Voiture import Voiture
 
 
 class VoitureService():

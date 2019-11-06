@@ -1,7 +1,7 @@
 import psycopg2
 
 from DAO.main.abstract_dao import AbstractDao
-from BusinessObject.main.Voiture import Voiture
+from BusinessObject.main.Voiture.Voiture import Voiture
 
 class VoitureDAO(AbstractDao):
     def create(self, voiture):
