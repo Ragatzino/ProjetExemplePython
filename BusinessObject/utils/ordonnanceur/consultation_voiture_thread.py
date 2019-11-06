@@ -3,8 +3,14 @@ from DAO.main.VoitureDao import VoitureDAO
 import time
 
 class ConsultationVoitureThread(StoppableThread):
+
+    def __init__(self,voitures):
+        self.voitures=voitures
+
     def run(self):
-        global voitures
         while not self.stopped():
+            self.voitures = VoitureDAO.find_all()
             time.sleep(20)
-            voitures = VoitureDAO.find_all()
+
+    def get_voitures(self):
+        return self.voitures

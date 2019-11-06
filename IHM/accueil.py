@@ -23,7 +23,7 @@ questions = [
 class Accueil(AbstractVue):
 
     def display_info(self):
-        with open('assets/banner.txt', 'r', encoding="utf-8") as asset:
+        with open('assets/border.txt', 'r', encoding="utf-8") as asset:
             print(asset.read())
 
     def make_choice(self):
