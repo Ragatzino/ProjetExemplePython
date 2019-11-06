@@ -6,3 +6,6 @@ class Voiture:
 
     def __str__(self):
         return 'Voiture (marque=%s, prix=%s)' % (self.marque, self.prix)
+
+    def get_marque(self):
+        return self.marque

@@ -17,5 +17,5 @@ if __name__ == '__main__':
         # le choix que doit saisir l'utilisateur
         current_vue = current_vue.make_choice()
 
-    with open('assets/cat.txt', 'r', encoding="utf-8") as asset:
+    with open('assets/border.txt', 'r', encoding="utf-8") as asset:
         print(asset.read())

@@ -8,7 +8,7 @@ class PriceValidator(Validator):
     def validate(self, document) -> None:
         ok = regex.match('^\+?\d[\d ]+\d$', document.text)
         if not ok:
-            raise ValidationError(message='Please enter a number', cursor_position=len(document.text))
+            raise ValidationError(message='Veuillez entrer un nombre', cursor_position=len(document.text))
 
 
 questions = [
@@ -20,9 +20,9 @@ questions = [
     },
     {
         'type': 'input',
-        'name': 'mot de passe',
+        'name': 'prix',
         'message': 'Quel son prix',
-        'default': 'Number',
+        'default': 100,
         'validate': PriceValidator
     }
 ]

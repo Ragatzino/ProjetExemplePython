@@ -1,12 +1,12 @@
 from IHM.abstract_vue import AbstractVue
+from Service.voiture_service import VoitureService
+import time
 from BusinessObject.utils.ordonnanceur.consultation_voiture_thread import ConsultationVoitureThread
 
 
 class Listing(AbstractVue):
-    def __init__(self):
-      self.ordonnanceur = ConsultationVoitureThread()
-      self.ordonnanceur.start()
-      self.voitures = self.ordonnanceur.get_voitures()
+    voiture_service = VoitureService()
+    voitures=voiture_service.trouver_voitures()
     questions = [
         {
             'type': 'list',
@@ -24,6 +24,6 @@ class Listing(AbstractVue):
             print(asset.read())
 
     def make_choice(self):
+        time.sleep(10)
         from IHM.accueil import Accueil
-        self.ordonnanceur.stop()
-
+        return Accueil()
