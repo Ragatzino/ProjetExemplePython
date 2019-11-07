@@ -1,22 +1,26 @@
+from PyInquirer import Separator, prompt
+
 from IHM.abstract_vue import AbstractVue
-from Service.voiture_service import VoitureService
+from Service.utils.variables import global_vars
 import time
-from BusinessObject.utils.ordonnanceur.consultation_voiture_thread import ConsultationVoitureThread
+
+questions = [
+    {
+        'type': 'list',
+        'name': 'choix',
+        'message': 'Quel est votre choix',
+        'choices': [
+            str(global_vars.voitures),
+            Separator(),
+            'Ajouter une voiture',
+            Separator(),
+            'Quitter'
+        ]
+    }
+]
 
 
 class Listing(AbstractVue):
-    voiture_service = VoitureService()
-    voitures=voiture_service.trouver_voitures()
-    questions = [
-        {
-            'type': 'list',
-            'name': 'choix',
-            'message': 'Quel est votre choix',
-            'choices': [
-                'Quitter'
-            ]
-        }
-    ]
 
     def display_info(self):
         """ map(lambda x:print(x), voitures)"""
@@ -24,6 +28,8 @@ class Listing(AbstractVue):
             print(asset.read())
 
     def make_choice(self):
+
+        answers = prompt(questions)
         time.sleep(10)
         from IHM.accueil import Accueil
         return Accueil()

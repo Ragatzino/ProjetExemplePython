@@ -1,5 +1,5 @@
 from IHM.abstract_vue import AbstractVue
-from Service.voiture_service import VoitureService
+from Service.main.voiture_service import VoitureService
 from PyInquirer import prompt, Validator, ValidationError
 import regex
 
@@ -22,7 +22,6 @@ questions = [
         'type': 'input',
         'name': 'prix',
         'message': 'Quel son prix',
-        'default': 100,
         'validate': PriceValidator
     }
 ]

@@ -39,10 +39,11 @@ class VoitureDAO(AbstractDao):
         try:
             cur.execute(
                 "select * from voiture")
-            found=cur.fetchall()
-            if found:
-                return Voiture(found[1],found[2])
-            return None
+            records=cur.fetchall()
+            voitures=[]
+            for row in records:
+                voitures.append(Voiture(row[0],row[1]))
+            return voitures
 
         except psycopg2.Error as e:
             AbstractDao.connection.rollback()

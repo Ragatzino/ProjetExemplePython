@@ -1,16 +1,15 @@
 from BusinessObject.utils.ordonnanceur.stoppable_thread import StoppableThread
-from DAO.main.VoitureDao import VoitureDAO
+from Service.main.voiture_service import VoitureService
+from Service.utils.variables import global_vars
 import time
+
 
 class ConsultationVoitureThread(StoppableThread):
 
-    def __init__(self,voitures):
-        self.voitures=voitures
-
     def run(self):
+        voitureService = VoitureService()
         while not self.stopped():
-            self.voitures = VoitureDAO.find_all()
+            print(global_vars.voitures)
+            global_vars.voitures = voitureService.trouver_voitures()
+            print(global_vars.voitures)
             time.sleep(20)
-
-    def get_voitures(self):
-        return self.voitures
